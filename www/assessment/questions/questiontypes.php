@@ -603,43 +603,92 @@ $request = '{
                 ]
             }
         },
-    {
-        "instant_feedback": true,
-        "labels": {
-            "frequency": 10,
-            "show_max": true,
-            "show_min": true
+        {
+            "instant_feedback": true,
+            "labels": {
+                "frequency": 10,
+                "show_max": true,
+                "show_min": true
+            },
+            "line": {
+                "left_arrow": true,
+                "max": 3,
+                "min": 0,
+                "right_arrow": true
+            },
+            "points": ["1.5", "2.5", "5"],
+            "response_id": "demo31-'.$uniqueResponseIdSuffix.'",
+            "snap_to_ticks": true,
+            "stimulus": "Position the tokens at the closest points. If the number isn&#39;t on the line, do not place it.<br />\nHint: We&#39;ll accept anything within .1 of the correct answer.",
+            "ticks": {
+                "distance": ".1",
+                "show": true
+            },
+            "type": "numberline",
+            "validation": {
+                "partial_scoring": true,
+                "penalty_score": 0,
+                "show_partial_ui": true,
+                "threshold": 0.1,
+                "valid_responses": [{
+                    "point": "1.5",
+                    "position": "1.5"
+                }, {
+                    "point": "2.5",
+                    "position": "2.5"
+                }],
+                "valid_score": 1
+            }
         },
-        "line": {
-            "left_arrow": true,
-            "max": 3,
-            "min": 0,
-            "right_arrow": true
+        {
+            "response_id": "demo39-'.$uniqueResponseIdSuffix.'",
+            "stimulus": "Insert a point at position 5, segment at position 2-4, and left ray with hollow point at position -5. Alternative response is a point at position 5 and segment at position 2-4.",
+            "instant_feedback": true,
+            "elements_number": 3,
+            "line": {
+                "max": 10,
+                "min": -10,
+                "right_arrow": true
+            },
+            "metadata": {},
+            "ticks": {
+                "distance": 3,
+                "minor_ticks_number": 2,
+                "show": true
+            },
+            "type": "numberlineplot",
+            "ui_style": {
+                "fontsize": ""
+            },
+            "validation": {
+                "alt_responses": [{
+                    "score": 0.75,
+                    "value": [{
+                        "type": "point",
+                        "point1": 5
+                    }, {
+                        "type": "segment",
+                        "point1": 2,
+                        "point2": 4
+                    }]
+                }],
+                "scoring_type": "exactMatch",
+                "valid_response": {
+                    "score": 1,
+                    "value": [{
+                        "type": "segment",
+                        "point1": 2,
+                        "point2": 4
+                    }, {
+                        "type": "point",
+                        "point1": 5
+                    }, {
+                        "type": "ray_left_direction_right_hollow",
+                        "point1": -5
+                    }]
+                }
+            }
         },
-        "points": ["1.5", "2.5", "5"],
-        "response_id": "demo31-'.$uniqueResponseIdSuffix.'",
-        "snap_to_ticks": true,
-        "stimulus": "Position the tokens at the closest points. If the number isn&#39;t on the line, do not place it.<br />\nHint: We&#39;ll accept anything within .1 of the correct answer.",
-        "ticks": {
-            "distance": ".1",
-            "show": true
-        },
-        "type": "numberline",
-        "validation": {
-            "partial_scoring": true,
-            "penalty_score": 0,
-            "show_partial_ui": true,
-            "threshold": 0.1,
-            "valid_responses": [{
-                "point": "1.5",
-                "position": "1.5"
-            }, {
-                "point": "2.5",
-                "position": "2.5"
-            }],
-            "valid_score": 1
-        }
-    },
         {
             "response_id": "demo27-'.$uniqueResponseIdSuffix.'",
             "axis_x": {
@@ -1391,6 +1440,14 @@ $signedRequest = $Init->generate();
         <div class="col-md-8">
             <h3 id="q31">Numberline</h3>
             <span class="learnosity-response question-demo31-<?php echo $uniqueResponseIdSuffix ?>"></span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="q39">Numberline plot</h3>
+            <span class="learnosity-response question-demo39-<?php echo $uniqueResponseIdSuffix ?>"></span>
         </div>
     </div>
     <hr>
