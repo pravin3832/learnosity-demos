@@ -644,7 +644,7 @@ $request = '{
             "response_id": "demo39-'.$uniqueResponseIdSuffix.'",
             "stimulus": "Insert a point at position 5, segment at position 2-4, and left ray with hollow point at position -5. Alternative response is a point at position 5 and segment at position 2-4.",
             "instant_feedback": true,
-            "elements_number": 3,
+            "stacked_elements": 3,
             "line": {
                 "max": 10,
                 "min": -10,
@@ -653,13 +653,10 @@ $request = '{
             "metadata": {},
             "ticks": {
                 "distance": 3,
-                "minor_ticks_number": 2,
+                "minor_ticks": 2,
                 "show": true
             },
             "type": "numberlineplot",
-            "ui_style": {
-                "fontsize": ""
-            },
             "validation": {
                 "alt_responses": [{
                     "score": 0.75,
