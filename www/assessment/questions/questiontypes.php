@@ -642,7 +642,7 @@ $request = '{
         },
         {
             "response_id": "demo39-'.$uniqueResponseIdSuffix.'",
-            "stimulus": "Insert a point at position 5, segment at position 2-4, and left ray with hollow point at position -5. Alternative response is a point at position 5 and segment at position 2-4.",
+            "stimulus": "",
             "instant_feedback": true,
             "stacked_elements": 3,
             "line": {
@@ -1444,6 +1444,8 @@ $signedRequest = $Init->generate();
     <div class="row">
         <div class="col-md-8">
             <h3 id="q39">Numberline plot</h3>
+            <p>Plot point at \((5)\), segment at \((2,4)\) and left ray with hollow point at \((-5)\).</p>
+            <p>Alternative response is point at \((5)\), and segment at \((2,4)\).</p>
             <span class="learnosity-response question-demo39-<?php echo $uniqueResponseIdSuffix ?>"></span>
         </div>
     </div>
